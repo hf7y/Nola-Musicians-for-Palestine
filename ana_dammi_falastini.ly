@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.24.1"
 \include "arabic.ly"
 \language "english"
 \paper {
