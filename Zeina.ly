@@ -4,7 +4,7 @@
 
 Zeina-header = \header {
     piece =  "Zeina"
-    tag =  
+    tag =  ""
     }
 
 \layout {
@@ -13,6 +13,96 @@ Zeina-header = \header {
         autoBeaming = ##f
         }
     }
+
+Zeina-Melody =  \relative bes' {
+    \clef "treble"
+    \numericTimeSignature
+    \time 4/4 
+    \key bes \major
+
+    \repeat volta 2 {
+        | % 1
+        \tempo 4=180 
+        \mark \markup { \box { Intro } } 
+        s4^ "Trumpets" _ "Lower harmony only on repeat" s2. | % 2
+        s1 | % 3
+        s1 | % 4
+        s2^ "Saxes" s2 | % 5
+        s4^ "Trumpets" s2. | % 6
+        s1 | % 7
+        s1 | % 8
+        s2^ "Saxes" s2
+    }
+    \repeat volta 2 {
+        | % 9
+        \mark \markup { \musicglyph "scripts.segno" } 
+        \mark \markup { \box { A } } 
+        s4^ "Trumpets" -"A Section repeats 4X" s2. | \barNumberCheck #10
+        s1 | % 11
+        s1 | % 12
+        s4 s16^ "Saxes" s8. s2
+    }
+    | % 13
+    \mark \markup { \box { B } } 
+    s1 | % 14
+    s1 | % 15
+    s1 | % 16
+    s1 | % 17
+    s1 | % 18
+    s1 | % 19
+    s1 | \barNumberCheck #20
+    s1 | % 21
+    s1 | % 22
+    s1 | % 23
+    s1 | % 24
+    s1 | % 25
+    \mark \markup { \box { C } } 
+    s1 | % 26
+    s1 | % 27
+    s1 | % 28
+    s1 | % 29
+    s1 | \barNumberCheck #30
+    s1 | % 31
+    s1 | % 32
+    s4 s16^ "Only when repeating" s8. s2 ^ "D.S."
+    \bar "|."
+    \repeat volta 2 {
+        \mark \markup { \box { D } } 
+        \tempo 4=220 
+        s4 ^ "Saxes"
+        s2. |
+        s1 | s1 | s1 | s1 
+    }
+    \alternative { 
+        {
+            s1 | s1 | s2 s8^ "All" s4. | }
+        {
+            s1 | s1 | 
+            s4^ "Trumpets" s2. | }
+    }
+    \bar "|."
+    \repeat volta 2 {
+        \mark \markup { \box { E } } 
+        s2^ "Trumpets" s2 |
+        s4 s8^ "Saxes" s8 s2 |
+        s2 ^ "Trumpets" s2 | 
+        s4 s8^ "Saxes" s8 s2 |
+        s2^ "Trumpets" s2 |
+        s4 s8^ "Saxes" s8 s2 |
+    }
+    \alternative { 
+        {
+            s4^ "Trumpets" s2. |
+            s4 s4^ "Saxes" s2 |
+        }
+        {
+            s4^ "Trumpets" s2. |
+            s4^ "rit." s8^ "All" s8 s2 |
+        }
+    } ^ "D.S." \bar "|."
+}
+
+
 Zeina-Melody =  \relative bes' {
     \clef "treble" \numericTimeSignature\time 4/4 \key bes \major
     \repeat volta 2 {
@@ -182,7 +272,7 @@ Zeina-Accompaniment =  \relative d {
     }
 
 Zeina-Bass =  \relative d {
-    \clef "treble_15" \numericTimeSignature\time 4/4 \key bes \major
+    \numericTimeSignature\time 4/4 \key bes \major
     \repeat volta 2 {
         | % 1
         d2 _ "Only on repeat" r2 | % 2
@@ -315,55 +405,55 @@ Zeina-Percussion =  \relative e' {
     }
 
 
-% The score definition
-\score {
-    <<
+% % The score definition
+% \score {
+%     <<
         
-        \new StaffGroup
-        <<
-            \new Staff
-            <<
-                \set Staff.instrumentName = "Melody"
-                \set Staff.shortInstrumentName = "mldy."
+%         \new StaffGroup
+%         <<
+%             \new Staff
+%             <<
+%                 \set Staff.instrumentName = "Melody"
+%                 \set Staff.shortInstrumentName = "mldy."
                 
-                \context Staff << 
-                    \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                    \context Voice = "Melody" {  \Zeina-Melody }
-                    >>
-                >>
-            \new Staff
-            <<
-                \set Staff.instrumentName = "Accompaniment"
-                \set Staff.shortInstrumentName = "acc."
+%                 \context Staff << 
+%                     \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+%                     \context Voice = "Melody" {  \Zeina-Melody }
+%                     >>
+%                 >>
+%             \new Staff
+%             <<
+%                 \set Staff.instrumentName = "Accompaniment"
+%                 \set Staff.shortInstrumentName = "acc."
                 
-                \context Staff << 
-                    \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                    \context Voice = "Accompaniment" {  \Zeina-Accompaniment }
-                    >>
-                >>
-            \context ChordNames = "Chords" { \Zeina-Chords}
-            \new Staff
-            <<
-                \set Staff.instrumentName = "Bass"
-                \set Staff.shortInstrumentName = "bass"
+%                 \context Staff << 
+%                     \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+%                     \context Voice = "Accompaniment" {  \Zeina-Accompaniment }
+%                     >>
+%                 >>
+%             \context ChordNames = "Chords" { \Zeina-Chords}
+%             \new Staff
+%             <<
+%                 \set Staff.instrumentName = "Bass"
+%                 \set Staff.shortInstrumentName = "bass"
                 
-                \context Staff << 
-                    \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                    \context Voice = "Bass" {  \Zeina-Bass }
-                    >>
-                >>
+%                 \context Staff << 
+%                     \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+%                     \context Voice = "Bass" {  \Zeina-Bass }
+%                     >>
+%                 >>
             
-            >>
-        \new RhythmicStaff
-        <<
-            \set RhythmicStaff.instrumentName = "Percussion"
-            \set RhythmicStaff.shortInstrumentName = "perc."
+%             >>
+%         \new RhythmicStaff
+%         <<
+%             \set RhythmicStaff.instrumentName = "Percussion"
+%             \set RhythmicStaff.shortInstrumentName = "perc."
             
-            \context RhythmicStaff << 
-                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "Percussion" {  \Zeina-Percussion }
-                >>
-            >>
+%             \context RhythmicStaff << 
+%                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+%                 \context Voice = "Percussion" {  \Zeina-Percussion }
+%                 >>
+%             >>
         
-        >>
-    }
+%         >>
+%     }

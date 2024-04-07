@@ -4,7 +4,7 @@
 \language "nederlands"
 \pointAndClickOff
 
-Ana_Dammi_Falastini-Header = \header {
+Ana_Dammi_Falastini-header = \header {
     piece =  "Ana Dammi Falastini"
     tag = ""
     }
@@ -457,7 +457,7 @@ Ana_Dammi_Falastini-Percussion =  \relative e' {
 
 % The score definition
 \score {
-    \Ana_Dammi_Falastini-Header
+    \Ana_Dammi_Falastini-header
     <<        
         \new StaffGroup
         <<

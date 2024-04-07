@@ -1,20 +1,20 @@
 \version "2.24.1"
 
-\include "Anna Dammi Falastini.ly"
+\include "Ana Dammi Falastini.ly"
 \include "Bil Afrah.ly"
 \include "Enta Omry.ly"
 \include "Leve Palestina.ly"
+\include "Zeina.ly"
 
 \include "Phone.ly"
-% \include "Zeina.ly"
 
 \book {
 	\bookpart {
-		\Anna_Dammi_Falastini-header
+		\Ana_Dammi_Falastini-header
 		\new Staff <<
 			\clef "bass"
-			\Anna_Dammi_Falastini-Bass
-			\Anna_Dammi_Falastini-Form
+			\Ana_Dammi_Falastini-Bass
+			\Ana_Dammi_Falastini-Form
 		>>
 	}
 	\bookpart {
@@ -39,6 +39,15 @@
 			\clef "bass"
 			\Leve_Palestina-Bass
 			\Leve_Palestina-Form
+		>>
+	}
+
+	\bookpart {
+		\Zeina-header
+		\new Staff <<
+			\clef "bass"
+			\Zeina-Bass
+			% \Zeina-Form
 		>>
 	}
 }
