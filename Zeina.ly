@@ -14,8 +14,7 @@ Zeina-header = \header {
         }
     }
 
-Zeina-Melody =  \relative bes' {
-    \clef "treble"
+Zeina-Form =  \relative bes' {
     \numericTimeSignature
     \time 4/4 
     \key bes \major
@@ -196,10 +195,10 @@ Zeina-Melody =  \relative bes' {
             fis8 [ f8 ] fis4 }
         {
             a4 ^ "Trumpets" g4 fis4 es4
-            d4 ^ "rit." \startTrillSpan es8 [ ^ "All"
+            d4 ^ "rit." \startTrillSpan es8 [ ^ "All"  \stopTrillSpan
             fis8 ] es8 [ d8 ] c4 }
         } ^ "D.S." \bar "|."
-    \stopTrillSpan }
+    }
 
 Zeina-Accompaniment =  \relative d {
     \clef "treble_8" \numericTimeSignature\time 4/4 \key bes \major

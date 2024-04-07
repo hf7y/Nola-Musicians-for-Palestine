@@ -456,66 +456,66 @@ Ana_Dammi_Falastini-Percussion =  \relative e' {
 
 
 % The score definition
-\score {
-    \Ana_Dammi_Falastini-header
-    <<        
-        \new StaffGroup
-        <<
-            \new Staff
-            <<
-                \set Staff.instrumentName = "Melody"
-                \set Staff.shortInstrumentName = "mldy."
+% \score {
+%     \Ana_Dammi_Falastini-header
+%     <<        
+%         \new StaffGroup
+%         <<
+%             \new Staff
+%             <<
+%                 \set Staff.instrumentName = "Melody"
+%                 \set Staff.shortInstrumentName = "mldy."
                 
-                \context Staff << 
-                    \mergeDifferentlyDottedOn
-                    \mergeDifferentlyHeadedOn
-                    \Ana_Dammi_Falastini-Form
-                    \context Voice = "Melody" { \Ana_Dammi_Falastini-Melody }
-                    >>
-                >>
-            \new Staff
-            <<
-                \set Staff.instrumentName = "Accompaniment"
-                \set Staff.shortInstrumentName = "acc."
+%                 \context Staff << 
+%                     \mergeDifferentlyDottedOn
+%                     \mergeDifferentlyHeadedOn
+%                     \Ana_Dammi_Falastini-Form
+%                     \context Voice = "Melody" { \Ana_Dammi_Falastini-Melody }
+%                     >>
+%                 >>
+%             \new Staff
+%             <<
+%                 \set Staff.instrumentName = "Accompaniment"
+%                 \set Staff.shortInstrumentName = "acc."
                 
-                \context Staff << 
-                    \mergeDifferentlyDottedOn
-                    \mergeDifferentlyHeadedOn
-                    \clef "bass"
-                    \Ana_Dammi_Falastini-Form
-                    \context Voice = "Accompaniment" {  \Ana_Dammi_Falastini-Accompaniment }
-                    >>
-                >>
-            \context ChordNames = "Chords" { \Ana_Dammi_Falastini-Chords}
-            \new Staff
-            <<
-                \set Staff.instrumentName = "Bass"
-                \set Staff.shortInstrumentName = "bass"
+%                 \context Staff << 
+%                     \mergeDifferentlyDottedOn
+%                     \mergeDifferentlyHeadedOn
+%                     \clef "bass"
+%                     \Ana_Dammi_Falastini-Form
+%                     \context Voice = "Accompaniment" {  \Ana_Dammi_Falastini-Accompaniment }
+%                     >>
+%                 >>
+%             \context ChordNames = "Chords" { \Ana_Dammi_Falastini-Chords}
+%             \new Staff
+%             <<
+%                 \set Staff.instrumentName = "Bass"
+%                 \set Staff.shortInstrumentName = "bass"
                 
-                \context Staff << 
-                    \mergeDifferentlyDottedOn
-                    \mergeDifferentlyHeadedOn
-                    \clef "bass"
-                    \Ana_Dammi_Falastini-Form
-                    \context Voice = "Bass" {  \Ana_Dammi_Falastini-Bass }
-                    >>
-                >>
+%                 \context Staff << 
+%                     \mergeDifferentlyDottedOn
+%                     \mergeDifferentlyHeadedOn
+%                     \clef "bass"
+%                     \Ana_Dammi_Falastini-Form
+%                     \context Voice = "Bass" {  \Ana_Dammi_Falastini-Bass }
+%                     >>
+%                 >>
             
-            >>
-        \new RhythmicStaff
-        <<
-            \set RhythmicStaff.instrumentName = "Percussion"
-            \set RhythmicStaff.shortInstrumentName = "perc."
+%             >>
+%         \new RhythmicStaff
+%         <<
+%             \set RhythmicStaff.instrumentName = "Percussion"
+%             \set RhythmicStaff.shortInstrumentName = "perc."
             
-            \context RhythmicStaff << 
-                \mergeDifferentlyDottedOn
-                \mergeDifferentlyHeadedOn
-                \clef "percussion"
-                \Ana_Dammi_Falastini-Form
-                \context Voice = "Percussion" {  \Ana_Dammi_Falastini-Percussion }
-                >>
-            >>
+%             \context RhythmicStaff << 
+%                 \mergeDifferentlyDottedOn
+%                 \mergeDifferentlyHeadedOn
+%                 \clef "percussion"
+%                 \Ana_Dammi_Falastini-Form
+%                 \context Voice = "Percussion" {  \Ana_Dammi_Falastini-Percussion }
+%                 >>
+%             >>
         
-        >>
-    }
+%         >>
+%     }
 
