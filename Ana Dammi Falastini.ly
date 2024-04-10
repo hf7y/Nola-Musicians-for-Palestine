@@ -2,7 +2,6 @@
 % automatically converted by musicxml2ly from Ana Dammi Falastini.musicxml
 \include "arabic.ly"
 \language "nederlands"
-\pointAndClickOff
 
 Ana_Dammi_Falastini-header = \header {
     piece =  "Ana Dammi Falastini"
@@ -10,28 +9,24 @@ Ana_Dammi_Falastini-header = \header {
     }
 
 Ana_Dammi_Falastini-Form =  {
-    \key  bes \kurd
-    \numericTimeSignature
+    \key bes \kurd
     \time 4/4 
     \tempo 4 = 200
-    \repeat volta 4 {
-        \alternative { 
-            {
-                | % 1
-                \mark \markup { \box { Intro } } s1 | % 2
-                s1
-            }
-            {
-                | % 3
-                s1 | % 4
-                s1 \bar "||"
-            }
-        }
-        }
+    \mark \markup \padded-box "Intro"
+    \repeat volta 3 {
+        | % 1
+        \textMark "Repeat 3x"
+        s1 | % 2
+        s1
+    }
+    | % 3
+    s1 | % 4
+    s1 \bar "||"
+
     % \break
     | % 5
     \repeat segno 2 {
-        \mark \markup { \box { A } } s1 | % 6
+        \mark \markup \padded-box "A" s1 | % 6
         s1 | % 7
         s1 | % 8
         s1 | % 9
@@ -45,7 +40,8 @@ Ana_Dammi_Falastini-Form =  {
         s1 \bar "||"
         % \break
 
-        \mark \markup { \box { B } \musicglyph "scripts.segno" } s1 | % 18
+        \mark \markup \padded-box "B" % \mark \markup { \musicglyph "scripts.segno" } 
+        s1 | % 18
         s1 | % 19
         s1 | \barNumberCheck #20
         s1 | % 21
@@ -61,7 +57,8 @@ Ana_Dammi_Falastini-Form =  {
 
         \repeat volta 2 {
             | % 29
-            \mark \markup { \box { C } } s1 | \barNumberCheck #30
+            \mark \markup \padded-box "C"
+            s1 | \barNumberCheck #30
             s1 | % 31
             s1 | % 32
             s1 }
@@ -69,7 +66,7 @@ Ana_Dammi_Falastini-Form =  {
         
         \repeat volta 2 {
             | % 33
-            \mark \markup { \box { D } }
+            \mark \markup \padded-box "D"
             s1 
             \alternative {
                 { 
@@ -92,22 +89,19 @@ Ana_Dammi_Falastini-Form =  {
 Ana_Dammi_Falastini-Melody =  \relative ces'' {
     %intro
     \repeat volta 3 {
-        \alternative {
-            {
-                | % 1
-                r4 bes16 ces16 bes16 ces16
-                bes4 bes16 ces16 bes16 ces16 | % 2
-                bes4 r4 bes16 ces16 bes16 ces16
-                bes4 }
-            }
-            {
-                | % 3
-                r4 bes,8 [ bes8 ] ces8 [ ces8
-                des8 des8 ] | % 4
-                es8 [ es8 f8 f8 ] ges8 [
-                ges8 as8 as8 ] 
-            }
-        }
+        | % 1
+        r4 bes16[ ces16 bes16 ces16]
+        bes4 bes16[ ces16 bes16 ces16] | % 2
+        bes4 r4 bes16[ ces16 bes16 ces16]
+        bes4 
+    }
+
+    | % 3
+    r4 bes,8 [ bes8 ] 
+        ces8 [ ces8 des8 des8 ] | % 4
+    es8 [ es8 f8 f8 ] 
+        ges8 [ ges8 as8 as8 ] 
+
     \repeat segno 2 {
         | %5
         r4 bes,8 [ es8 ]
@@ -126,10 +120,10 @@ Ana_Dammi_Falastini-Melody =  \relative ces'' {
         des4 f4 es2 | % 15
         r4 des'8 [ des8 ] des4 des8
         [ des8 ] | % 16
-        <<  { as,8 [ bes8 ces8 des8 ]
-                es8 [ f8 ges8 as8 ] } 
-            \\ { des4 es4 
+        <<  { des4 es4 
                 des8 [ ces8 bes8 as8 ] }
+            \\ { as,8 [ bes8 ces8 des8 ]
+                es8 [ f8 ges8 as8 ] } 
             >> | % 17
         bes4 r4 r2 | % 18
         r2. as4 | % 19
@@ -145,10 +139,9 @@ Ana_Dammi_Falastini-Melody =  \relative ces'' {
         bes4 r4 r2 | % 28
         R1 \repeat volta 2 {
             | % 29
-            \mark \markup { \box { C } } bes4 ^
-            "All quarter notes here can have a little trill" ces8
-            [ bes8 ] bes4 ces8 [ bes8
-            ] | \barNumberCheck #30
+            % \mark \markup { \box { C } } 
+            bes4 ^ "All quarter notes here can have a little trill" 
+                ces8 [ bes8 ] bes4 ces8 [ bes8 ] | \barNumberCheck #30
             des4 ces8 [ bes8 ] bes4
             ces8 [ bes8 ] | % 31
             bes4 ces8 [ bes8 ] bes4
@@ -183,23 +176,17 @@ Ana_Dammi_Falastini-Melody =  \relative ces'' {
 }
 
 Ana_Dammi_Falastini-Accompaniment =  \relative bes, {
-    \repeat volta 4 {
-        \alternative 
-        {
-            {
-                | % 1
-                bes1 ~ | % 2
-                bes1 
-            }
-            {
-                | % 3
-                r4 bes8 [ bes8 ] ces8 [ ces8
-                des8 des8 ] | % 4
-                es8 [ es8 f8 f8 ] ges8 [
-                ges8 as8 as8 ]
-            }
-        }
+    \repeat volta 3 {
+        | % 1
+        bes1 ~ | % 2
+        bes1 
     }
+    | % 3
+    r4 bes8 [ bes8 ] 
+        ces8 [ ces8 des8 des8 ] | % 4
+    es8 [ es8 f8 f8 ] 
+        ges8 [ ges8 as8 as8 ]
+
     \repeat segno 2 {
         | % 5 
         bes4 r4 r2 | % 6
@@ -262,20 +249,15 @@ Ana_Dammi_Falastini-Accompaniment =  \relative bes, {
 }
 
 Ana_Dammi_Falastini-Bass = \relative bes, {
-    \repeat volta 4 {
-        \alternative {
-            {
-                | % 1
-                bes1 ~ | % 2
-                bes1    
-            }
-            {
-                | % 3
-                bes4 r4 bes4 r4 | % 4
-                r2. as4 
-            }
-        }
+    \repeat volta 3 {
+        | % 1
+        bes1 ~ | % 2
+        bes1    
     }
+    | % 3
+    bes4 r4 bes4 r4 | % 4
+    r2. as4 
+
     \repeat segno 2 {
         | % 5
         bes4 r4 r2 | % 6
@@ -325,21 +307,16 @@ Ana_Dammi_Falastini-Bass = \relative bes, {
 }  
 
 Ana_Dammi_Falastini-Chords =  \chordmode {
-    \repeat volta 2 {
+    \repeat volta 3 {
         | % 1
         bes1:5 
-        \alternative {
-            {
-                | % 2
-                s1 
-            }
-            {
-                | % 3
-                bes4:5 s4 bes4:5 s4 | % 4
-                s2. as4:5
-            }
-        }
+        | % 2
+        s1 
     }
+
+    | % 3
+    bes4:5 s4 bes4:5 s4 | % 4
+    s2. as4:5
 
     | % 5
     \repeat segno 2 {
@@ -399,18 +376,14 @@ Ana_Dammi_Falastini-Percussion =  \relative e' {
     \repeat volta 3 {
         | % 1
         e4 e4 e4 e4 
-        \alternative { 
-            {
-                | % 2
-                e4. e4. e4 
-            }
-            {
-                | % 3
-                e4 r4 e4 r4 | % 4
-                e4 e4 e4 e4 
-            }
-        }
-    \repeat segno 2 
+        | % 2
+        e4. e4. e4 
+    }
+    | % 3
+    e4 r4 e4 r4 | % 4
+    e4 e4 e4 e4 
+
+    \repeat segno 2 {
         | % 5
         e4 r4 r2 | % 6
         r2. e4 | % 7
@@ -427,12 +400,13 @@ Ana_Dammi_Falastini-Percussion =  \relative e' {
         e8 e8 r8 e8 e4 e4 \bar
         "||"
         e4. ^ "Ayub" e8 e4 e4 | % 18
-        R1*11 \repeat volta 2 {
+        R1*11 
+        \repeat volta 2 {
             | % 29
-            e4 e4 e4 e4 |
-            \barNumberCheck #30
+            e4 e4 e4 e4 | \barNumberCheck #30
             e4. e4. e4 | % 31
-            R1*2 }
+            R1*2 
+        }
         \repeat volta 2 {
             | % 33
             e4. ^ "Ayub" e8 e4 e4 

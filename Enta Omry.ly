@@ -1,15 +1,18 @@
 \version "2.24.1"
 % automatically converted by musicxml2ly from Enta Omry.musicxml
-\pointAndClickOff
 
 Enta_Omry-header = \header {
     piece =  "Enta Omry"
     tag =  ""
-    }
+}
 
-  Enta_Omry-Form =  \relative f' {
-    \numericTimeSignature\time 4/4 \key es \major | % 1
-    \tempo 4=120 \mark \markup { \box { Intro } } s1 | % 2
+Enta_Omry-Form = \relative f' {
+    \time 4/4 
+    \key es \major 
+    | % 1
+    \tempo 4=120 
+    \mark \markup \padded-box "Intro"
+    s1 | % 2
     s1 | % 3
     s1 | % 4
     s1 | % 5
@@ -21,12 +24,15 @@ Enta_Omry-header = \header {
 
     \repeat volta 2 {
         | % 14
-        \mark \markup { \box { A } } s2. ^ "4x" s4 | % 15
+        \mark \markup \padded-box "A"
+        \textMark "4x" s2. s4 | % 15
         s1 }
     \break
+
+    \mark \markup \padded-box "B"
     \repeat volta 2 {
         | % 16
-        \mark \markup { \box { B } } s4 ^ "Trumpets"
+        s4 % ^ "Trumpets"
         s2. | % 17
         s1 | % 18
         s1 | % 19
@@ -35,23 +41,31 @@ Enta_Omry-header = \header {
         s1 \bar "||"
         \break
 
-        \mark \markup { \box { B' } } s4 ^ "Saxes"
+        \mark \markup \padded-box "B′"
+        s4 % ^ "Saxes"
         s2. | % 25
-        s2 s8 s8 ^ "Trumpets" s8 s8 | % 26
-        s4 ^ "Saxes" s4 s2 | % 27
-        s2 s8 s8 ^ "Trumpets" s4 | % 28
-        s4 ^ "Saxes" s2. | % 29
+        s2 s8 s8 %^ "Trumpets" 
+            s8 s8 | % 26
+        s4 %^ "Saxes" 
+            s4 s2 | % 27
+        s2 s8 s8 % ^ "Trumpets" 
+            s4 | % 28
+        s4 % ^ "Saxes" 
+            s2. | % 29
         s1 | \barNumberCheck #30
-        s4 s8 ^ "All" s8 s2 | % 31
+        s4 s8 % ^ "All" 
+            s8 s2 | % 31
         \key bes \major s4 s2. \bar "||"
         \break
 
-        \mark \markup { \box { B'' } } 
+        \mark \markup \padded-box "B′′"
         s1 | % 33
-        s8 s8 _ "Saxes" s2. | % 34
+        s8 s8 %_ "Saxes" 
+            s2. | % 34
 
         s1 | % 35
-        s8 s8 _ "Saxes" s2. | % 36
+        s8 s8 %_ "Saxes" 
+            s2. | % 36
 
         s1 | % 37
         s1
@@ -60,17 +74,24 @@ Enta_Omry-header = \header {
             | % 38
             s1 | % 39
             s1 }
-        } \repeat volta 2 {
+        } 
+    \repeat volta 2 {
         | \barNumberCheck #40
-        \time 3/4  s4. - "4x" ^ "rit."
-        s8 s8 s8 }
+        \time 3/4 
+        \textMark "4x" 
+        s4._\markup \italic "rit."
+            s8 s8 s8 
+    }
     | % 41
-    s2. ^\fermata \caesura
+    s2. % ^\fermata 
+    \caesura
     \break
 
     \textMark "Drums start with 4 bars of maksoum" 
-    \numericTimeSignature\time 4/4 \mark \markup { \box { C } } \tempo
-    4=150 s1*4
+    \numericTimeSignature\time 4/4 
+    \mark \markup \padded-box "C"
+    \tempo 4=150 
+    s1*4
     \repeat volta 2 {
         s8  s8
         s2.
@@ -83,77 +104,87 @@ Enta_Omry-header = \header {
         s1 }
     \break
     
-    \mark \markup { \box { D } } s1 s1 s1 s1
+    \mark \markup \padded-box "D"
+    s1 s1 s1 s1
     s1*4 
     s1*4
     \repeat volta 2 {
-        s8 - "3x" s8 s2.
+        \textMark "3x"
+        s8 s8 s2.
         s1 }
     s1 \bar "|."
     }
 
 Enta_Omry-Melody =  \relative f' {
-    \clef "treble" \numericTimeSignature\time 4/4 \key es \major | % 1
-    \tempo 4=120 \mark \markup { \box { Intro } } r4. f8
-    g2 | % 2
+    % \clef "treble"
+    % \numericTimeSignature
+    % \time 4/4 
+    % \key es \major 
+    | % 1
+    \tempo 4=120 
+    % \mark \markup { \box { Intro } } 
+    r4. f8 g2 | % 2
     r4. f8 g2 | % 3
     r4. as8 f2 | % 4
     r4. es16 [ f16 ] g2 | % 5
     r4. as16 [ bes16 ] c2 | % 6
     r4. bes16 [ c16 ] d2 | % 7
-    r4 es8 [ c8 ] d8 [ bes16
-    as16 ] g4 | % 8
-    r4 es'8 [ c8 ] d8 [ bes16
-    as16 ] g4 | % 9
-    r4 bes8 [ g8 ] f8 [ e16 f16
-    ] g4 | \barNumberCheck #10
-    r4 bes8 [ g8 ] f8 [ e16 f16
-    ] g4 | % 11
-    r4 es'8 [ c8 ] d8 [ bes16
-    as16 ] g4 | % 12
-    r4 es'8 [ c8 ] d8 [ bes16
-    as16 ] g4 | % 13
-    r4 es'8 [ c8 ] d8 [ bes8 ]
-    as16 [ g16 f8 ] \bar "||"
+    r4 es8 [ c8 ] 
+        d8 [ bes16 as16 ] g4 | % 8
+    r4 es'8 [ c8 ] 
+        d8 [ bes16 as16 ] g4 | % 9
+    r4 bes8 [ g8 ] 
+        f8 [ e16 f16 ] g4 | \barNumberCheck #10
+    r4 bes8 [ g8 ] 
+        f8 [ e16 f16 ] g4 | % 11
+    r4 es'8 [ c8 ] 
+        d8 [ bes16 as16 ] g4 | % 12
+    r4 es'8 [ c8 ] 
+        d8 [ bes16 as16 ] g4 | % 13
+    r4 es'8 [ c8 ] 
+        d8 [ bes8 ] as16 [ g16 f8 ] \bar "||"
+
     \repeat volta 2 {
         | % 14
-        \mark \markup { \box { A } } r2. ^ "4x" r8 es'16 [
-        d16 ] | % 15
+        % \mark \markup { \box { A } } 
+        r2. %^ "4x" 
+            r8 es'16 [ d16 ] | % 15
         c8 [ d8 bes8 as8 ]
-        g4 r4 }
+        g4 r4 
+    }
     \repeat volta 2 {
         | % 16
-        \mark \markup { \box { B } } d'4 ^ "Trumpets"
+        % \mark \markup { \box { B } } 
+        d'4 ^ "Trumpets"
         es4 es4 d8 [ d8 ~ ] | % 17
         d8 [ d8 ] es4 es2 | % 18
-        c4 d4 d4 c8 [
-        c8 ~ ] | % 19
-        c8 [ c8 ] d4 d4 r4 |
-        \barNumberCheck #20
-        bes4 c4 c4 bes8 [
-        d8 ~ ] | % 21
-        d8 c4 d8 bes4 as4
-        | % 22
+        c4 d4 d4 c8 [ c8 ~ ] | % 19
+        c8 [ c8 ] d4 d4 r4 | \barNumberCheck #20
+        bes4 c4 c4 bes8 [ d8 ~ ] | % 21
+        d8 c4 d8 bes4 as4 | % 22
         g4 r4 r2 | % 23
         R1 \bar "||"
-        \mark \markup { \box { B' } } d'4 ^ "Saxes"
-        es4 es4 d8 [ d8 ~ ] | % 25
-        d8 [ d8 ] es4 es8 f,8 ^. [ ^ "Trumpets" g8 ^.
-        as8 ^. ]
-        | % 26
-        c4 ^ "Saxes" d4 d4 c8 [
-        c8 ~ ] | % 27
-        c8 [ c8 ] d4 d8 d,8 ^. [ ^ "Trumpets" es8 ^.
-        f8 ^. ] | % 28
-        bes4 ^ "Saxes" c4 c4 bes8
-        [ d8 ~ ] | % 29
-        d8 c4 d8 bes4 as4
-        | \barNumberCheck #30
-        g4 d'8 [ ^ "All" f8 ] e4
-        \trill c8 [ es8 ] | % 31
-        \key bes \major d4 \trill r8 c8 f8
-        [ es8 g8 es8 ] \bar "||"
-        \mark \markup { \box { B'' } } 
+
+        % \mark \markup { \box { B' } } 
+        d'4 ^ "Saxes"
+            es4 es4 d8 [ d8 ~ ] | % 25
+        d8 [ d8 ] es4 
+            es8 f,8 ^. [ ^ "Trumpets" g8 ^. as8 ^. ] | % 26
+        c4 ^ "Saxes" d4 
+            d4 c8 [ c8 ~ ] | % 27
+        c8 [ c8 ] d4 
+            d8 d,8 ^. [ ^ "Trumpets" es8 ^. f8 ^. ] | % 28
+        bes4 ^ "Saxes" c4 
+            c4 bes8 [ d8 ~ ] | % 29
+        d8 c4 d8 bes4 as4 | \barNumberCheck #30
+        g4 d'8 [ ^ "All" f8 ]
+            e4 \trill c8 [ es8 ] | % 31
+
+        % \key bes \major 
+        d4 \trill r8 c8 
+            f8 [ es8 g8 es8 ] \bar "||"
+
+        % \mark \markup { \box { B'' } } 
         << {
             d4 es4 es4 d8 [ d8 ~ ] | % 33
             d8 [ d8 ] _ "Saxes" es4 es4 r4 | % 34
@@ -180,13 +211,17 @@ Enta_Omry-Melody =  \relative f' {
             es8 g8 es8 ] }
         } \repeat volta 2 {
         | \barNumberCheck #40
-        \time 3/4  g,4. - "4x" ^ "rit." \startTrillSpan ^ "rit."
-        \startTrillSpan bes8 as8 [ c8 ] }
+        \time 3/4  g,4.\trill %- "4x" ^ "rit."
+        bes8 as8 [ c8 ] }
     | % 41
-    g2. ^\fermata \caesura \stopTrillSpan \stopTrillSpan
-    \numericTimeSignature\time 4/4 \mark \markup { \box { C } } \tempo
-    4=150 R1*4 \repeat volta 2 {
-        g8 [ - "Drums start with 4 bars of maksoum" as8
+    g2. ^\fermata %\caesura 
+    % \numericTimeSignature
+    % \time 4/4 
+    % \mark \markup { \box { C } } 
+    % \tempo 4=150 
+    R1*4 
+    \repeat volta 2 {
+        g8 [ as8
         g8 as8 ] g4 as4 bes4
         as4 bes4 r4 as4 bes4 r4
         as4 as8 [ bes16 c16 ]
@@ -194,7 +229,8 @@ Enta_Omry-Melody =  \relative f' {
         f4 g8 f4 g4 as4
         g4 as4 r4 f4 as4 r4 f4
         es4 f4 g4 r4 }
-    \mark \markup { \box { D } } R1 d'4 ( c4 )
+    % \mark \markup { \box { D } } 
+    R1 d'4 ( c4 )
     c4 ( bes4 ) R1 c4 ( bes4 )
     bes4 ( as4 ) R1 bes4 ( as4 )
     as4 ( g4 ) d'8 [ es8 d8
@@ -208,10 +244,11 @@ Enta_Omry-Melody =  \relative f' {
     bes8 ] bes8 [ c8 bes8
     as8 ] as8 [ bes8 as8 g8 ]
     \repeat volta 2 {
-        g8 [ - "3x" as8 ] bes4 r4 g8 [
-        as8 ] bes8 [ c16 d16 ]
-        c8 [ bes8 ] bes8 [ as8 ]
-        g4 }
+        g8 [ %- "3x" 
+            as8 ] bes4 r4 g8 [ as8 ] |
+        bes8 [ c16 d16 ] c8 [ bes8 ] 
+            bes8 [ as8 ] g4 
+    }
     g8 [ as8 ] bes4 r2 \bar "|."
     }
 
@@ -283,7 +320,10 @@ Enta_Omry-Accompaniment =  \relative f {
         \time 3/4  g,4. bes8 as8 [
         c8 ] }
     | % 41
-    g2. ^\fermata \caesura \numericTimeSignature\time 4/4 R1*4
+    g2. ^\fermata %\caesura 
+    \numericTimeSignature
+    \time 4/4 
+    R1*4
     \repeat volta 2 {
         r8 <d g>8 r8 <d g>8 r4 <d g>4 r8
         <d g>8 r8 <d g>8 r4 <d g>4 as'4
@@ -335,7 +375,8 @@ Enta_Omry-Bass =  \relative g, {
         \time 3/4  g4. bes8 as8 [
         c8 ] }
     | % 41
-    g2. ^\fermata \caesura \numericTimeSignature\time 4/4 R1*4
+    g2. ^\fermata %\caesura 
+    \numericTimeSignature\time 4/4 R1*4
     \repeat volta 2 {
         \repeat percent 2 { g4 r4 g4 g'4 }
         g,4 g4 r4 r4 
@@ -430,8 +471,10 @@ Enta_Omry-Percussion =  \relative e' {
         \time 3/4  e4 e8 [ e8 ] e4 ^
         "Roll/shake" }
     | % 41
-    R2. \numericTimeSignature\time 4/4 \stopStaff \override
-    Staff.StaffSymbol.line-count = #1 \startStaff e8 ^
+    R2. ^\fermata
+
+    \numericTimeSignature
+    \time 4/4 e8 ^
     "Maksoum" e8 r8 e8 e4 e4 R1*3
     \repeat volta 2 {
         R1*2 e4 ^ "Baladi (halftime)" e4 r4

@@ -1,96 +1,119 @@
 \version "2.24.1"
 % automatically converted by musicxml2ly from Leve Palestina.musicxml
-\pointAndClickOff
 
 Leve_Palestina-header = \header {
     piece =  "Leve Palestina"
     tag =  ""
-    }
+}
 
 Leve_Palestina-Form =  \relative f' {
-    \numericTimeSignature\time 4/4 \key bes \major | % 1
-    \tempo 4=100 \mark \markup { \box { Intro } } s8 ^
-    "Trumpets Only" s8 s2. | % 2
+    \time 4/4 
+    \key bes \major 
+    | % 1
+    \tempo 4=100 
+    \mark \markup \padded-box "Intro"
+    s8 % ^ "Trumpets Only" 
+        s8 s2. | % 2
     s1 | % 3
-    s8 ^ "All Join" s8 s2. | % 4
+    s8 % ^ "All Join" 
+        s8 s2. | % 4
     s1 
     \break
 
     \repeat volta 2 {
         | % 5
-        \mark \markup { \box { A } } s8 -
-        "The form is Intro, AB AB AB AB AB....." -
-        "each B having a different featured group" s8
-        s2. | % 6
-        s1 }
+        \mark \markup \padded-box "A"
+        \textMark \markup \column {
+            \line { "The form is Intro, AB AB AB AB AB....." }
+            \line { "each B having a different featured group" }
+        }
+        s8 s8 s2. | % 6
+        s1 
+    }
     \repeat volta 2 {
         | % 7
         s1 | % 8
-        s1 }
+        s1 
+    }
     \break
     
     \repeat volta 2 {
         | % 9
-        \mark \markup { \box { B } } s8 ^ "Featured group"
-        s8 s2. | \barNumberCheck #10
-        s8 ^ "Response"s8 s2. | % 11
+        \mark \markup \padded-box "B"
+        s8 % ^ "Featured group"
+            s8 s2. | \barNumberCheck #10
+        s8 % ^ "Response"
+            s8 s2. | % 11
         s1 | % 12
-        s8 ^ "Response" s8 s2. }
+        s8 %^ "Response" 
+            s8 s2. 
+    }
     | % 13
     s1 | % 14
     s1 | % 15
-    s8 ^ "Response" s8 s2. | % 16
+    s8 % ^ "Response" 
+        s8 s2. | % 16
     s1 \bar "|."
-     }
+}
 
 Leve_Palestina-Melody =  \relative f' {
-    \clef "treble" \numericTimeSignature\time 4/4 \key bes \major | % 1
-    \tempo 4=100 \mark \markup { \box { Intro } } f8 [ ^
-    "Trumpets Only" g8 g8 g8 ] f8 ( [
-    g8 ) g8 ] r8 | % 2
-    f8 [ g8 g8 f8 ] es8 ( [
-    d8 ) d8 ] r8 | % 3
+    % \clef "treble" 
+    % \numericTimeSignature
+    % \time 4/4 
+    % \key bes \major 
+    | % 1
+    % \tempo 4=100 
+    % \mark \markup { \box { Intro } } 
+    f8 [ ^ "Trumpets Only" g8 g8 g8 ] 
+        f8 ( [ g8 ) g8 ] r8 | % 2
+    f8 [ g8 g8 f8 ] 
+        es8 ( [ d8 ) d8 ] r8 | % 3
     f8 [ ^ "All Join" g8 g8 g8 ]
-    f8 ( [ g8 ) g8 ] r8 | % 4
-    f8 [ g8 g8 f8 ] es8 ( [
-    d8 ) d8 ] r8 \repeat volta 2 {
+        f8 ( [ g8 ) g8 ] r8 | % 4
+    f8 [ g8 g8 f8 ] 
+        es8 ( [ d8 ) d8 ] r8 
+    \repeat volta 2 {
         | % 5
-        \mark \markup { \box { A } } f8 ( [ -
-        "The form is Intro, AB AB AB AB AB....." -
-        "each B having a different featured group" g8 ) ]
-        g4 f8 ( [ g8 ) ] g4 | % 6
-        g8 [ a8 bes8 a8 ] bes8 [
-        a8 ] g4 }
+        % \mark \markup \padded-box "A"
+        f8 ( [ g8 ) ] g4
+            f8 ( [ g8 ) ] g4 | % 6
+        g8 [ a8 bes8 a8 ] 
+            bes8 [ a8 ] g4 
+    }
     \repeat volta 2 {
         | % 7
-        bes8 [ a8 g8 f8 ] g8 [
-        a8 f8 es8 ] | % 8
+        bes8 [ a8 g8 f8 ] 
+            g8 [ a8 f8 es8 ] | % 8
         f8 [ g8 es8 d8 ] f8 [
         es8 ] d4 }
     \repeat volta 2 {
         | % 9
-        \mark \markup { \box { B } } g8 [ ^ "Featured group"
-        bes8 bes8 a8 ] bes8 [ a8
-        ] g4 | \barNumberCheck #10
+        % \mark \markup \padded-box "B"
+        g8 [ ^ "Featured group" bes8 bes8 a8 ] 
+            bes8 [ a8 ] g4 | \barNumberCheck #10
         g8 [ ^ "Response" bes8 bes8 a8 ]
-        bes8 [ a8 ] g4 | % 11
+            bes8 [ a8 ] g4 | % 11
         g8 [ bes8 bes8 bes8 ]
-        c8 [ bes8 ] g4 | % 12
-        g8 [ ^ "Response" bes8 bes8 bes8
-        ] c8 [ bes8 ] g4 }
+            c8 [ bes8 ] g4 | % 12
+        g8 [ ^ "Response" bes8 bes8 bes8 ]
+            c8 [ bes8 ] g4 
+    }
     | % 13
-    g8 [ bes8 ~ bes8 a8 ] g4
-    f4 | % 14
-    es8 [ g8 g8 g8 ] f8 [
-    es8 ] d4 | % 15
+    g8 [ bes8 ~ bes8 a8 ] g4 f4 | % 14
+    es8 [ g8 g8 g8 ] 
+        f8 [ es8 ] d4 | % 15
     g8 [ ^ "Response" bes8 ~ bes8 a8 ]
-    g4 f4 | % 16
-    es8 [ g8 g8 g8 ] f8 [
-    es8 ] d4 \bar "|."
-     }
+        g4 f4 | % 16
+    es8 [ g8 g8 g8 ] 
+        f8 [ es8 ] d4 \bar "|."
+}
 
 Leve_Palestina-Accompaniment =  \relative f {
-    % \clef "treble_8" \numericTimeSignature\time 4/4 \key bes \major | % 1
+    % \clef "treble_8" 
+    % \numericTimeSignature
+    % \time 4/4 
+    % \key bes \major 
+    | % 1
     R1*2 | % 3
     f8 [ g8 g8 g8 ] f8 ( [
     g8 ) g8 ] r8 | % 4
@@ -105,8 +128,11 @@ Leve_Palestina-Accompaniment =  \relative f {
         <es g>2 f8 [ es8 ] d4 }
     \repeat volta 2 {
         | % 9
-        r8 ^ "(Mids repeat this" ^ "unless featured)" <g bes>8 ~
-        ~ <g bes>4 r2 | \barNumberCheck #10
+        r8 ^ \markup \column {
+            \line { "(Mids repeat this" }
+            \line { "unless featured)" }
+        } <g bes>8 ~
+            <g bes>4 r2 | \barNumberCheck #10
         g8 [ ^ "Response" bes8 bes8 a8 ]
         bes8 [ a8 ] g4 | % 11
         g8 [ bes8 bes8 bes8 ]
@@ -172,8 +198,12 @@ Leve_Palestina-Chords =  \chordmode {
     }
 
 Leve_Palestina-Percussion =  \relative e' {
-    \clef "percussion" \numericTimeSignature\time 4/4 \key c \major
-    \stopStaff \override Staff.StaffSymbol.line-count = #1 \startStaff | % 1
+    \clef "percussion" 
+    \numericTimeSignature
+    \time 4/4 
+    \key c \major
+    \stopStaff \override Staff.StaffSymbol.line-count = #1 \startStaff 
+    | % 1
     R1*2 ^ "Starts without drums" | % 3
     e4 e4 e4 e4 | % 4
     e4 e4 e8 [ e8 ] e4 \repeat volta 2 {
@@ -187,7 +217,7 @@ Leve_Palestina-Percussion =  \relative e' {
         R1*4 }
     | % 13
     R1*4 \bar "|."
-    }
+}
 
 
 % The score definition
