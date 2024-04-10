@@ -2,10 +2,10 @@ To Do:
 ------
 
 April 9, 2024
-    * Convert and clean-up folk medley
-    * Standardize formatting for 4x indications on repeats
-    * ~~Document the new MarkLine context and other changes made there~~
-    * Remove 5 superscripts from chord symbols
+* Convert and clean-up folk medley
+* Standardize formatting for 4x indications on repeats
+* ~~Document the new MarkLine context and other changes made there~~
+* Remove 5 superscripts from chord symbols
 
 April 7, 2024
 Score.ly
