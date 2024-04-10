@@ -2,10 +2,10 @@ To Do:
 ------
 
 April 9, 2024
-    * Convert and clean-up folk medley
-    * Standardize formatting for 4x indications on repeats
-    * ~~Document the new MarkLine context and other changes made there~~
-    * Remove 5 superscripts from chord symbols
+* Convert and clean-up folk medley
+* Standardize formatting for 4x indications on repeats
+* ~~Document the new MarkLine context and other changes made there~~
+* Remove 5 superscripts from chord symbols
 
 April 7, 2024
 Score.ly
@@ -55,7 +55,14 @@ Clean up and document ly files
 * Create a template describing how different parts are named and organized
 
 Create score and parts books
+<<<<<<< HEAD
 * Created: Score.ly, Bass.ly
 * Working: Accompaniment-F.ly
 * To-Do: Melody, Accompaniment, Percussion
 * Find dynamic way to make in all keys and clefs
+=======
+    * Created: Score.ly, Bass.ly
+    * Working: Accompaniment-F.ly
+    * To-Do: Melody, Accompaniment, Percussion
+    * Find dynamic way to make in all keys and clefs
+>>>>>>> 0c7ea6a173b771ff0f8e483be01c9ed2d7da7375
