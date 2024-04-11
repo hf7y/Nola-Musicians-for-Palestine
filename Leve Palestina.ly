@@ -2,8 +2,8 @@
 % automatically converted by musicxml2ly from Leve Palestina.musicxml
 
 Leve_Palestina-header = \header {
-    piece =  "Leve Palestina"
-    tag =  ""
+    title =  "Leve Palestina"
+    tagline =  ""
 }
 
 Leve_Palestina-Form =  \relative f' {
@@ -20,9 +20,10 @@ Leve_Palestina-Form =  \relative f' {
     s1 
     \break
 
+    \removeWithTag #'noBreaks \break
+    \mark \markup \padded-box "A"
     \repeat volta 2 {
         | % 5
-        \mark \markup \padded-box "A"
         \textMark \markup \column {
             \line { "The form is Intro, AB AB AB AB AB....." }
             \line { "each B having a different featured group" }
@@ -36,10 +37,11 @@ Leve_Palestina-Form =  \relative f' {
         s1 
     }
     \break
-    
+
+    \removeWithTag #'noBreaks \break
+    \mark \markup \padded-box "B"
     \repeat volta 2 {
         | % 9
-        \mark \markup \padded-box "B"
         s8 % ^ "Featured group"
             s8 s2. | \barNumberCheck #10
         s8 % ^ "Response"
@@ -178,7 +180,7 @@ Leve_Palestina-Chords =  \chordmode {
     | % 1
     s1 s1 s1 s1 \repeat volta 2 {
         | % 5
-        g4:5 s8 f8:5 g4:5 s8 f8:5 | % 6
+        g4 s8 f8 g4 s8 f8 | % 6
         s4 s8 s8 s4 s8 s8 }
     \repeat volta 2 {
         | % 7
@@ -194,7 +196,7 @@ Leve_Palestina-Chords =  \chordmode {
     s4 s8 s8 s4 s8 s8 | % 14
     s4 s8 s8 s4 s8 s8 | % 15
     s4 s8 s8 s4 s8 s8 | % 16
-    s4 s8 s8 f8:5 es8:5 d4:5 \bar "|."
+    s4 s8 s8 f8 es8 d4 \bar "|."
     }
 
 Leve_Palestina-Percussion =  \relative e' {

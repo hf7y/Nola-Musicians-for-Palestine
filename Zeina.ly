@@ -2,8 +2,8 @@
 % automatically converted by musicxml2ly from Zeina.musicxml
 
 Zeina-header = \header {
-    piece =  "Zeina"
-    tag =  ""
+    title =  "Zeina"
+    tagline =  ""
 }
 
 \layout {
@@ -32,6 +32,7 @@ Zeina-Form =  \relative bes' {
     }
 
     \repeat segno 2 {
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "A"
         \repeat volta 2 {
             | % 9
@@ -41,6 +42,7 @@ Zeina-Form =  \relative bes' {
             s4 s16 s8. s2
         }
         | % 13
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "B"
         s1 | % 14
         s1 | % 15
@@ -55,6 +57,7 @@ Zeina-Form =  \relative bes' {
         s1 | % 24
         s1 | % 25
 
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "C"
         s1 | % 26
         s1 | % 27
@@ -67,6 +70,7 @@ Zeina-Form =  \relative bes' {
         \bar "|."
     }
 
+    \removeWithTag #'noBreaks \break
     \mark \markup \padded-box "D"
     \tempo 4=220 
     \repeat volta 2 {
@@ -81,6 +85,7 @@ Zeina-Form =  \relative bes' {
     }
     \bar "|."
 
+    \removeWithTag #'noBreaks \break
     \mark \markup \padded-box "E"
     \repeat volta 2 {
         s2 s2 |
@@ -206,9 +211,8 @@ Zeina-Melody =  \relative bes' {
             fis8 [ f8 ] fis4 }
         {
             a4 ^ "Trumpets" g4 fis4 es4
-            d4 % ^ "rit." 
-                \startTrillSpan es8 [ ^ "All"  \stopTrillSpan
-            fis8 ] es8 [ d8 ] c4 
+            d4 \trill % ^ "rit." 
+                es8 [ ^ "All" fis8 ] es8 [ d8 ] c4 
         }
     } % ^ "D.S." \bar "|."
 }
@@ -348,69 +352,69 @@ Zeina-Bass =  \relative d {
 Zeina-Chords =  \chordmode {
     \repeat volta 2 {
         | % 1
-        d2:5 s2 | % 2
-        d2:5 s2 | % 3
-        d2:5 s2 | % 4
-        d2:5 s2 | % 5
-        d2:5 s2 | % 6
-        d2:5 s2 | % 7
-        d2:5 s2 | % 8
-        d4:5 g4:5 d4:5 s4 
+        d2 s2 | % 2
+        d2 s2 | % 3
+        d2 s2 | % 4
+        d2 s2 | % 5
+        d2 s2 | % 6
+        d2 s2 | % 7
+        d2 s2 | % 8
+        d4 g4 d4 s4 
     }
     \repeat segno 2 {
         \repeat volta 2 {
             | % 9
-            d4:5 s4 s4 s4 | \barNumberCheck #10
-            d4:5 s4 s4 s4 | % 11
-            d4:5 s4 s4 s4 | % 12
-            d4:5 s4 s4 s4 
+            d4 s4 s4 s4 | \barNumberCheck #10
+            d4 s4 s4 s4 | % 11
+            d4 s4 s4 s4 | % 12
+            d4 s4 s4 s4 
         }
         | % 13
-        g4:5 s4 s4 s4 | % 14
-        g2:5 s2 | % 15
-        g4:5 s2 s4 | % 16
-        g2:5 s2 | % 17
-        d4:5 s2 s4 | % 18
-        d2:5 s2 | % 19
-        d4:5 s2 d4:5 | \barNumberCheck #20
-        c2:5 s2 | % 21
-        d4:5 s2 s4 | % 22
-        d2:5 s2 | % 23
-        d4:5 s2 s4 | % 24
-        c2:5 s2 | % 25
+        g4 s4 s4 s4 | % 14
+        g2 s2 | % 15
+        g4 s2 s4 | % 16
+        g2 s2 | % 17
+        d4 s2 s4 | % 18
+        d2 s2 | % 19
+        d4 s2 d4 | \barNumberCheck #20
+        c2 s2 | % 21
+        d4 s2 s4 | % 22
+        d2 s2 | % 23
+        d4 s2 s4 | % 24
+        c2 s2 | % 25
 
-        d4:5 s2 s4 | % 26
-        d2:5 s2 | % 27
-        d4:5 s2 s4 | % 28
-        c2:5 s2 | % 29
-        c2:5 s2 | \barNumberCheck #30
-        c2:5 s2 | % 31
-        c4:5 s2 s4 | % 32
-        d2:5 s2 \bar "|."
+        d4 s2 s4 | % 26
+        d2 s2 | % 27
+        d4 s2 s4 | % 28
+        c2 s2 | % 29
+        c2 s2 | \barNumberCheck #30
+        c2 s2 | % 31
+        c4 s2 s4 | % 32
+        d2 s2 \bar "|."
     }
 
     \repeat volta 2 {
-        d1:5 |
-        d1:5 |
-        es1:5 |
-        es1:5 |
-        d1:5 |
+        d1 |
+        d1 |
+        es1 |
+        es1 |
+        d1 |
         \alternative {
-            { d1:5 | es1:5 | d1:5 }
-            { d1:5 c1:5 d1:5 \bar "|." }
+            { d1 | es1 | d1 }
+            { d1 c1 d1 \bar "|." }
         }
     }
     
     \repeat volta 2 {
-        d2:5 s2 |
-        c2:5 s2 |
-        c2:5 s2 |
-        bes2:5 s2 |
-        bes2:5 s2 |
-        a2:5 s2 |
+        d2 s2 |
+        c2 s2 |
+        c2 s2 |
+        bes2 s2 |
+        bes2 s2 |
+        a2 s2 |
         \alternative {
-            { a2:5 s2 | g2:5 d2:5 | }
-            { a4:5 g4:5 fis4:5 es4:5 | d4:5 s4 s2 \bar "|." }
+            { a2 s2 | g2 d2 | }
+            { a4 g4 fis4 es4 | d4 s4 s2 \bar "|." }
         }
     }
 }

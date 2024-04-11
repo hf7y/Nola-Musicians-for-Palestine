@@ -2,8 +2,8 @@
 % automatically converted by musicxml2ly from Bil Afrah.musicxml
 
 Bil_Afrah-header = \header {
-    piece =  "Bil Afrah"
-    tag = ""
+    title =  "Bil Afrah"
+    tagline = ""
 }
 
 Bil_Afrah-Form =  \relative g' {
@@ -32,6 +32,7 @@ Bil_Afrah-Form =  \relative g' {
         s16 | % 13
         \break
 
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "B"
         s8 % ^ "All" 
         s8 s8 s8 s8 s8 | % 14
@@ -61,6 +62,7 @@ Bil_Afrah-Form =  \relative g' {
     s1*4 | % 30
     \break
     \repeat volta 2 {
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "C"
         s4. s4. s4 | % 31
         s1 | % 32
@@ -80,6 +82,7 @@ Bil_Afrah-Form =  \relative g' {
         s1 | % 46
         \break
         
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "C′"
         s1 | % 47
         s1 | % 48
@@ -138,7 +141,7 @@ Bil_Afrah-Melody =  \relative g' {
         es16 ] | % 13
         % \mark \markup { \box { B } } 
         g8 [ ^ "All" fis8 ]
-        \parenthesize < g d bes>8 [ fis8 ] es8 [ d8 ] | % 14
+        < g \parenthesize d \parenthesize bes>8 [ fis8 ] es8 [ d8 ] | % 14
         g8 [ fis8 ] g8 [ fis8 ]
         es8 [ d8 ] | % 15
         fis8 [ g8 ] a8. [ g16 ]
@@ -342,71 +345,71 @@ Bil_Afrah-Bass =  \relative g, {
 Bil_Afrah-Chords =  \chordmode {
     \repeat volta 2 {
         | % 1
-        g2:5 s4 | % 2
-        g2:5 s4 | % 3
-        g2:5 s4 | % 4
-        g2:5 s4 | % 5
-        g2:5 s4 | % 6
-        g2:5 s4 | % 7
-        g2:5 s4 | % 8
-        g2:5 s4 | % 9
-        g2:5 s4 | \barNumberCheck #10
-        g2:5 s4 | % 11
-        g2:5 s4 | % 12
-        g2:5 s4 | % 13
-        g2:5 s4 | % 14
-        g2:5 s4 | % 15
-        g2:5 s4 | % 16
-        g2:5 s4 | % 17
-        g2:5 s4 | % 18
-        g2:5 s4 | % 19
-        g2:5 s4 | \barNumberCheck #20
-        g2:5 s4 | % 21
-        g2:5 s4 | % 22
-        g2:5 s4 | % 23
-        g2:5 s4 | % 24
-        g2:5 s4 }
+        g2 s4 | % 2
+        g2 s4 | % 3
+        g2 s4 | % 4
+        g2 s4 | % 5
+        g2 s4 | % 6
+        g2 s4 | % 7
+        g2 s4 | % 8
+        g2 s4 | % 9
+        g2 s4 | \barNumberCheck #10
+        g2 s4 | % 11
+        g2 s4 | % 12
+        g2 s4 | % 13
+        g2 s4 | % 14
+        g2 s4 | % 15
+        g2 s4 | % 16
+        g2 s4 | % 17
+        g2 s4 | % 18
+        g2 s4 | % 19
+        g2 s4 | \barNumberCheck #20
+        g2 s4 | % 21
+        g2 s4 | % 22
+        g2 s4 | % 23
+        g2 s4 | % 24
+        g2 s4 }
     | % 25
-    g2:5 s4 | % 26
+    g2 s4 | % 26
     s1 s1 s1 s1 | % 30
     \repeat volta 2 {
-        g2.:5 s4 | % 31
-        g2.:5 s4 | % 32
-        g2.:5 s4 | % 33
-        g2.:5 s4 | % 34
-        g2.:5 s4 | % 35
-        g2.:5 s4 | % 36
-        g2.:5 s4 | % 37
-        g2.:5 s4 | % 38
-        g2.:5 s4 | % 39
-        g2.:5 s4 | % 40
-        g2.:5 s4 | % 41
-        g2.:5 s4 | % 42
-        g2.:5 s4 | % 43
-        g2.:5 s4 | % 44
-        g2.:5 s4 | % 45
-        g2.:5 s4 | % 46
-        g2.:5 s4 | % 47
-        g2.:5 s4 | % 48
-        g2.:5 s4 | % 49
-        g2.:5 s4 | % 50
-        g2.:5 s4 | % 51
-        g2.:5 s4 | % 52
-        g2.:5 s4 | % 53
-        g2.:5 s4 | % 54
-        g2.:5 s4 | \barNumberCheck #55
-        g2.:5 s4 | % 56
-        g2.:5 s4 | % 57
-        g2.:5 s4 | % 58
-        g2.:5 s4 | % 59
-        g2.:5 s4 | % 60
-        g2.:5 s4 | % 61
-        g2.:5 s4 }
+        g2. s4 | % 31
+        g2. s4 | % 32
+        g2. s4 | % 33
+        g2. s4 | % 34
+        g2. s4 | % 35
+        g2. s4 | % 36
+        g2. s4 | % 37
+        g2. s4 | % 38
+        g2. s4 | % 39
+        g2. s4 | % 40
+        g2. s4 | % 41
+        g2. s4 | % 42
+        g2. s4 | % 43
+        g2. s4 | % 44
+        g2. s4 | % 45
+        g2. s4 | % 46
+        g2. s4 | % 47
+        g2. s4 | % 48
+        g2. s4 | % 49
+        g2. s4 | % 50
+        g2. s4 | % 51
+        g2. s4 | % 52
+        g2. s4 | % 53
+        g2. s4 | % 54
+        g2. s4 | \barNumberCheck #55
+        g2. s4 | % 56
+        g2. s4 | % 57
+        g2. s4 | % 58
+        g2. s4 | % 59
+        g2. s4 | % 60
+        g2. s4 | % 61
+        g2. s4 }
     | % 62
-    g2.:5 s4 | % 63
-    g2.:5 s4 | % 64
-    g2.:5 s4 | \barNumberCheck #65
-    g4:5 s4 s2 \bar "|."
+    g2. s4 | % 63
+    g2. s4 | % 64
+    g2. s4 | \barNumberCheck #65
+    g4 s4 s2 \bar "|."
 }
 
 Bil_Afrah-Percussion =  \relative e' {

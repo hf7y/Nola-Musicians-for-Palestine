@@ -27,6 +27,11 @@
 % is necessary mostly because \textMark events would otherwise be printed
 % on each staff
 
+\header {
+  tagline = ""
+}
+
+
 \layout {
   \context {
     \name "MarkLine"

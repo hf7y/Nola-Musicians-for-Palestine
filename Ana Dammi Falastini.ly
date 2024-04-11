@@ -4,9 +4,9 @@
 \language "nederlands"
 
 Ana_Dammi_Falastini-header = \header {
-    piece =  "Ana Dammi Falastini"
-    tag = ""
-    }
+    title =  "Ana Dammi Falastini"
+    tagline = ""
+}
 
 Ana_Dammi_Falastini-Form =  {
     \key bes \kurd
@@ -26,6 +26,7 @@ Ana_Dammi_Falastini-Form =  {
     % \break
     | % 5
     \repeat segno 2 {
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "A" s1 | % 6
         s1 | % 7
         s1 | % 8
@@ -40,6 +41,7 @@ Ana_Dammi_Falastini-Form =  {
         s1 \bar "||"
         % \break
 
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "B" % \mark \markup { \musicglyph "scripts.segno" } 
         s1 | % 18
         s1 | % 19
@@ -55,18 +57,20 @@ Ana_Dammi_Falastini-Form =  {
         s1 
         % \break
 
+        \removeWithTag #'noBreaks \break
+        \mark \markup \padded-box "C"
         \repeat volta 2 {
             | % 29
-            \mark \markup \padded-box "C"
             s1 | \barNumberCheck #30
             s1 | % 31
             s1 | % 32
             s1 }
         % \break
         
+        \removeWithTag #'noBreaks \break
+        \mark \markup \padded-box "D"
         \repeat volta 2 {
             | % 33
-            \mark \markup \padded-box "D"
             s1 
             \alternative {
                 { 
@@ -77,7 +81,7 @@ Ana_Dammi_Falastini-Form =  {
                     | % 35
                     s1 | % 36
                     s1 | % 37
-                    s1 \bar "|."
+                    s1 \bar "||"
                 }
             }
         }
@@ -309,66 +313,66 @@ Ana_Dammi_Falastini-Bass = \relative bes, {
 Ana_Dammi_Falastini-Chords =  \chordmode {
     \repeat volta 3 {
         | % 1
-        bes1:5 
+        bes1 
         | % 2
         s1 
     }
 
     | % 3
-    bes4:5 s4 bes4:5 s4 | % 4
+    bes4 s4 bes4 s4 | % 4
     s2. as4:5
 
     | % 5
     \repeat segno 2 {
-        bes4:5 s4 s2 | % 6
-        s2. as4:5 | % 7
-        des4:5 s4 s2 | % 8
-        s2 bes4:5 as4:5 | % 9
-        bes4:5 s4 s2 | \barNumberCheck #10
+        bes4 s4 s2 | % 6
+        s2. as4 | % 7
+        des4 s4 s2 | % 8
+        s2 bes4 as4 | % 9
+        bes4 s4 s2 | \barNumberCheck #10
         s1 | % 11
-        des4:5 s4 s2 | % 12
+        des4 s4 s2 | % 12
         s1 | % 13
-        bes4:5 s4 s2 | % 14
-        bes4:5 s4 bes4:5 bes4:5 | % 15
-        des4:5 s4 s2 | % 16
+        bes4 s4 s2 | % 14
+        bes4 s4 bes4 bes4 | % 15
+        des4 s4 s2 | % 16
         s1 \bar "||"
-        bes4:5 s4 s4 s4 | % 18
-        bes4:5 s4 s4 s4 | % 19
-        des4:5 s4 s4 s4 | \barNumberCheck #20
-        bes4:5 s4 s4 s4 | % 21
-        bes4:5 s4 s4 s4 | % 22
-        bes4:5 s4 s4 s4 | % 23
-        des4:5 s4 s4 s4 | % 24
-        des4:5 s4 es4:5 s4 | % 25
-        des4:5 s4 es4:5 s4 | % 26
-        des4:5 s4 es4:5 s4 | % 27
-        bes4:5 s4 s4 s4 | % 28
-        bes4:5 s4 as4:5 s4 \repeat volta 2 {
+        bes4 s4 s4 s4 | % 18
+        bes4 s4 s4 s4 | % 19
+        des4 s4 s4 s4 | \barNumberCheck #20
+        bes4 s4 s4 s4 | % 21
+        bes4 s4 s4 s4 | % 22
+        bes4 s4 s4 s4 | % 23
+        des4 s4 s4 s4 | % 24
+        des4 s4 es4 s4 | % 25
+        des4 s4 es4 s4 | % 26
+        des4 s4 es4 s4 | % 27
+        bes4 s4 s4 s4 | % 28
+        bes4 s4 as4 s4 \repeat volta 2 {
             | % 29
-            bes4:5 s4 s4 s4 | \barNumberCheck #30
-            bes4:5 s4 s4 s4 | % 31
-            bes4:5 s4 s4 s4 | % 32
-            bes4:5 s4 s4 s4 }
+            bes4 s4 s4 s4 | \barNumberCheck #30
+            bes4 s4 s4 s4 | % 31
+            bes4 s4 s4 s4 | % 32
+            bes4 s4 s4 s4 }
         \repeat volta 2 {
             | % 33
-            des4:5 s4 s4 s4 
+            des4 s4 s4 s4 
             \alternative {
                 {
                     | % 34
-                    des4:5 s4 s4 s4
+                    des4 s4 s4 s4
                 }
                 {
                     | % 35
-                    des4:5 s4 s4 s4 | % 36
-                    es4:5 s4 s4 s4 | % 37
-                    es4:5 s4 s4 as4:5 | % 38
+                    des4 s4 s4 s4 | % 36
+                    es4 s4 s4 s4 | % 37
+                    es4 s4 s4 as4 | % 38
                 }
             }
         }
     }
    
-    bes4:5 s4 s4 s4 | \barNumberCheck #39
-    bes4:5 as4:5 bes4:5 s4 | % 40
+    bes4 s4 s4 s4 | \barNumberCheck #39
+    bes4 as4 bes4 s4 | % 40
 }
 
 Ana_Dammi_Falastini-Percussion =  \relative e' {

@@ -2,8 +2,8 @@
 % automatically converted by musicxml2ly from Enta Omry.musicxml
 
 Enta_Omry-header = \header {
-    piece =  "Enta Omry"
-    tag =  ""
+    title =  "Enta Omry"
+    tagline =  ""
 }
 
 Enta_Omry-Form = \relative f' {
@@ -22,15 +22,16 @@ Enta_Omry-Form = \relative f' {
     s1 \bar ".|:-||"
     \break
 
+    \removeWithTag #'noBreaks \break
+    \mark \markup \padded-box "A"
     \repeat volta 2 {
         | % 14
-        \mark \markup \padded-box "A"
         \textMark "4x" s2. s4 | % 15
         s1 }
-    \break
 
-    \mark \markup \padded-box "B"
     \repeat volta 2 {
+        \removeWithTag #'noBreaks \break
+        \mark \markup \padded-box "B"
         | % 16
         s4 % ^ "Trumpets"
         s2. | % 17
@@ -41,6 +42,7 @@ Enta_Omry-Form = \relative f' {
         s1 \bar "||"
         \break
 
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "B′"
         s4 % ^ "Saxes"
         s2. | % 25
@@ -55,9 +57,11 @@ Enta_Omry-Form = \relative f' {
         s1 | \barNumberCheck #30
         s4 s8 % ^ "All" 
             s8 s2 | % 31
-        \key bes \major s4 s2. \bar "||"
+        % \key bes \major 
+        s4 s2. \bar "||"
         \break
 
+        \removeWithTag #'noBreaks \break
         \mark \markup \padded-box "B′′"
         s1 | % 33
         s8 s8 %_ "Saxes" 
@@ -70,18 +74,21 @@ Enta_Omry-Form = \relative f' {
         s1 | % 37
         s1
         }
-    \alternative { {
+    \alternative { 
+        {
             | % 38
             s1 | % 39
-            s1 }
-        } 
-    \repeat volta 2 {
-        | \barNumberCheck #40
-        \time 3/4 
-        \textMark "4x" 
-        s4._\markup \italic "rit."
-            s8 s8 s8 
-    }
+            s1 
+        }
+        \repeat volta 4 {
+            | \barNumberCheck #40
+            \time 3/4 
+            \textMark "4x" 
+            s4._\markup \italic "rit."
+                s8 s8 s8 
+        }
+    } 
+
     | % 41
     s2. % ^\fermata 
     \caesura
@@ -203,16 +210,21 @@ Enta_Omry-Melody =  \relative f' {
         d8 ~ ] | % 37
         d8 c4 d8 bes4 as4
         }
-    \alternative { {
+    \alternative { 
+        {
             | % 38
             g4 d'8 [ f8 ] e4
             \trill c8 [ es8 ] | % 39
             d4 \trill r8 c8 f8 [
-            es8 g8 es8 ] }
-        } \repeat volta 2 {
-        | \barNumberCheck #40
-        \time 3/4  g,4.\trill %- "4x" ^ "rit."
-        bes8 as8 [ c8 ] }
+            es8 g8 es8 ] 
+        }
+        \repeat volta 4 {
+            | \barNumberCheck #40
+            \time 3/4  g,4.\trill %- "4x" ^ "rit."
+            bes8 as8 [ c8 ] 
+        }
+    } 
+
     | % 41
     g2. ^\fermata %\caesura 
     % \numericTimeSignature
@@ -260,19 +272,20 @@ Enta_Omry-Accompaniment =  \relative f {
     r4. es16 [ f16 ] g2 | % 5
     r4. as16 [ bes16 ] c2 | % 6
     r4. bes16 [ c16 ] d2 | % 7
-    r4 es8 [ c8 ] d8 [ bes16
-    as16 ] g4 | % 8
-    r4 es'8 [ c8 ] d8 [ bes16
-    as16 ] g4 | % 9
-    r4 bes8 [ g8 ] f8 [ e16 f16
-    ] g4 | \barNumberCheck #10
-    r4 bes8 [ g8 ] f8 [ e16 f16
-    ] g4 | % 11
-    r4 es'8 [ c8 ] d8 [ bes16
-    as16 ] g4 | % 12
-    r4 es'8 [ c8 ] d8 [ bes16
-    as16 ] g4 | % 13
-    R1 \bar "||"
+    r4 es8 [ c8 ] 
+        d8 [ bes16 as16 ] g4 | % 8
+    r4 es'8 [ c8 ] 
+        d8 [ bes16 as16 ] g4 | % 9
+    r4 bes8 [ g8 ] 
+        f8 [ e16 f16 ] g4 | \barNumberCheck #10
+    r4 bes8 [ g8 ] 
+        f8 [ e16 f16 ] g4 | % 11
+    r4 es'8 [ c8 ] 
+        d8 [ bes16 as16 ] g4 | % 12
+    r4 es'8 [ c8 ] 
+        d8 [ bes16 as16 ] g4 | % 13
+    R1 % \bar "||"
+
     \repeat volta 2 {
         | % 14
         d4 -. g8 -. g4 -. g8 -.
@@ -298,39 +311,46 @@ Enta_Omry-Accompaniment =  \relative f {
         g,4 -. g'4 -. g8 -. d8 -. [
         es8 -. f8 -. ] | % 28
         r4 g8 -. g4 -. g8 -. g4 -. | % 29
-        g,4 -. g'4 -. g4 -. r4 | \barNumberCheck
-        #30
-        r4 d8 [ f8 ] e4 c8 [ es8
-        ] | % 31
-        \key bes \major d4 r8 c8 f8 [ es8
-        g8 es8 ] \bar "||"
+        g,4 -. g'4 -. g4 -. r4 | \barNumberCheck #30
+        r4 d8 [ f8 ] e4 c8 [ es8 ] | % 31
+        % \key bes \major 
+        d4 r8 c8 f8 [ es8 g8 es8 ] % \bar "||"
         d4 es4 es4 d8 [ d8 ~ ] | % 33
         d8 [ d8 ] es4 es4 r4 | % 34
         c4 d4 d4 c8 [ c8 ~ ] | % 35
         c8 [ c8 ] d4 d4 r4 | % 36
-        bes4 c4 c4 bes8 [ d8 ~ ]
-        | % 37
-        d8 c4 d8 bes4 as4 | % 38
-        g4 d''8 [ f8 ] e4
-        c8 [ es8 ] | % 39
-        d4 r8 c8 f8 [ es8
-        g8 es8 ] }
-    \repeat volta 2 {
-        | \barNumberCheck #40
-        \time 3/4  g,4. bes8 as8 [
-        c8 ] }
+        bes4 c4 c4 bes8 [ d8 ~ ] | % 37
+        d8 c4 d8 bes4 as4 
+        \alternative {
+            {
+                | % 38
+                g4 d''8 [ f8 ] 
+                    e4 c8 [ es8 ] | % 39
+                d4 r8 c8 
+                    f8 [ es8 g8 es8 ]
+            }
+            \repeat volta 2 {
+                | \barNumberCheck #40
+                \time 3/4  
+                g,4. bes8 as8 [ c8 ] 
+            }
+        }
+    }
     | % 41
     g2. ^\fermata %\caesura 
     \numericTimeSignature
     \time 4/4 
     R1*4
     \repeat volta 2 {
-        r8 <d g>8 r8 <d g>8 r4 <d g>4 r8
-        <d g>8 r8 <d g>8 r4 <d g>4 as'4
-        bes4 r4 r4 r8 <d, g>8 r8 <d g>8 r4
-        <d g>4 r8 <c f>8 r8 <c f>8 r4 <c
-            f>4 r8 <c f>8 r8 <c f>8 r4 <c f>4
-        f4 as4 r2 es4 f4 g4 r4 }
+        r8 <d g>8 r8 <d g>8 r4 <d g>4 |
+        r8 <d g>8 r8 <d g>8 r4 <d g>4 |
+        as'4 bes4 r2 |
+        r8 <d, g>8 r8 <d g>8 r4 <d g>4 |
+        r8 <c f>8 r8 <c f>8 r4 <c f>4 |
+        r8 <c f>8 r8 <c f>8 r4 <c f>4 |
+        f4 as4 r2 |
+        es4 f4 g4 r4 |
+    }
     d8 [ es8 d8 es8 ] d4
     es4 R1 c8 [ d8 c8 d8 ] c4
     d4 R1 bes8 [ c8 bes8 c8 ]
@@ -352,28 +372,42 @@ Enta_Omry-Bass =  \relative g, {
     \repeat volta 2 {
         | % 14
         d4. g4. g4 | % 15
-        d2 g4 r4 }
+        d2 g4 r4 
+    }
     \repeat volta 2 {
         | % 16
         \repeat percent 3 { 
             d4. g4. g4 | % 17
-            d2 g4 r4 | } | % 22
+            d2 g4 r4 | 
+        } | % 22
         g4 f4 e4 es4 | % 23
-        d4 r4 f4 g4 \bar "||"
+        d4 r4 f4 g4 % \bar "||"
         \repeat percent 3 { 
             d4. g4. g4 |
-            d2 g4 r4 | } | \barNumberCheck #30
+            d2 g4 r4 | 
+        } | \barNumberCheck #30
         g4 f4 e4 es4 | % 31 \key bes \major
-        d4 r4 f4 g4 \bar "||"
-        \repeat percent 3 { 
+        d4 r4 f4 g4 | % 32 % \bar "||"
+        \repeat percent 2 { 
             d4. g4. g4 |
-            d2 g4 r4 | } | % 38
-        g4 f4 e4 es4 | % 39
-        d4 r4 f4 g4 }
-    \repeat volta 2 {
-        | \barNumberCheck #40
-        \time 3/4  g4. bes8 as8 [
-        c8 ] }
+            d2 g4 r4 | 
+        }
+        d4. g4. g4 |
+        d2 g4 r4 | 
+        \alternative {
+            {
+                | % 38
+                g4 f4 e4 es4 | % 39
+                d4 r4 f4 g4 
+            }
+            \repeat volta 4 {
+                | \barNumberCheck #40
+                \time 3/4  
+                g4. bes8 as8 [ c8 ]
+            }   
+        }
+    }
+
     | % 41
     g2. ^\fermata %\caesura 
     \numericTimeSignature\time 4/4 R1*4
@@ -398,59 +432,67 @@ Enta_Omry-Bass =  \relative g, {
 Enta_Omry-Chords =  \chordmode {
     \repeat volta 2 {
         | % 1
-        g2.:5 s4 | % 2
-        g2.:5 s4 | % 3
-        g2.:5 s4 | % 4
-        g2.:5 s4 | % 5
-        g2.:5 s4 | % 6
-        g2.:5 s4 | % 7
-        g2.:5 s4 | % 8
-        g2.:5 s4 | % 9
-        g2.:5 s4 | \barNumberCheck #10
-        g2.:5 s4 | % 11
-        g2.:5 s4 | % 12
-        g2.:5 s4 | % 13
-        g2.:5 s4 \bar "||"
-        d4.:5 g4.:5 g4:5 | % 15
-        d2:5 g4:5 s4 }
+        g2. s4 | % 2
+        g2. s4 | % 3
+        g2. s4 | % 4
+        g2. s4 | % 5
+        g2. s4 | % 6
+        g2. s4 | % 7
+        g2. s4 | % 8
+        g2. s4 | % 9
+        g2. s4 | \barNumberCheck #10
+        g2. s4 | % 11
+        g2. s4 | % 12
+        g2. s4 | % 13
+        g2. s4 \bar "||"
+        d4. g4. g4 | % 15
+        d2 g4 s4 }
     \repeat volta 2 {
         | % 16
-        d4.:5 g4.:5 g4:5 | % 17
-        d2:5 g4:5 s4 | % 18
-        d4.:5 g4.:5 g4:5 | % 19
-        d2:5 g4:5 s4 | \barNumberCheck #20
-        d4.:5 g4.:5 g4:5 | % 21
-        d2:5 g4:5 s4 | % 22
-        g4:5 f4:5 e4:5 es4:5 | % 23
-        d4:5 s4 f4:5 g4:5 \bar "||"
-        d4.:5 g4.:5 g4:5 | % 25
-        d2:5 g4:5 s4 | % 26
-        d4.:5 g4.:5 g4:5 | % 27
-        d2:5 g4:5 s4 | % 28
-        d4.:5 g4.:5 g4:5 | % 29
-        d2:5 g4:5 s4 | \barNumberCheck #30
-        g4:5 f4:5 e4:5 es4:5 | % 31
-        d4:5 s4 f4:5 g4:5 \bar "||"
-        d4.:5 g4.:5 g4:5 | % 33
-        d2:5 g4:5 s4 | % 34
-        d4.:5 g4.:5 g4:5 | % 35
-        d2:5 g4:5 s4 | % 36
-        d4.:5 g4.:5 g4:5 | % 37
-        d2:5 g4:5 s4 | % 38
-        g4:5 f4:5 e4:5 es4:5 | % 39
-        d4:5 s4 f4:5 g4:5 }
-    \repeat volta 2 {
-        | \barNumberCheck #40
-        g4.:5 bes8:5 as8:5 c8:5 }
+        d4. g4. g4 | % 17
+        d2 g4 s4 | % 18
+        d4. g4. g4 | % 19
+        d2 g4 s4 | \barNumberCheck #20
+        d4. g4. g4 | % 21
+        d2 g4 s4 | % 22
+        g4 f4 e4 es4 | % 23
+        d4 s4 f4 g4 \bar "||"
+        d4. g4. g4 | % 25
+        d2 g4 s4 | % 26
+        d4. g4. g4 | % 27
+        d2 g4 s4 | % 28
+        d4. g4. g4 | % 29
+        d2 g4 s4 | \barNumberCheck #30
+        g4 f4 e4 es4 | % 31
+        d4 s4 f4 g4 \bar "||"
+        d4. g4. g4 | % 33
+        d2 g4 s4 | % 34
+        d4. g4. g4 | % 35
+        d2 g4 s4 | % 36
+        d4. g4. g4 | % 37
+        d2 g4 s4 
+        \alternative {
+            {
+                | % 38
+                g4 f4 e4 es4 | % 39
+                d4 s4 f4 g4 
+            }
+            \repeat volta 4 {
+                | \barNumberCheck #40
+                g4. bes8 as8 c8 
+            }  
+        }
+    }
+
     | % 41
-    g2.:5 s1 s1 s1 s1 \repeat volta 2 {
-        g4:5 s4 s4 s4 g4:5 s4 s4 s4 g4:5 g4:5 s4 s4 g4:5 s4 s4 s4 f4:5
-        s4 s4 s4 f4:5 s4 s4 s4 f4:5 f4:5 s4 s4 es4:5 f4:5 g4:5 s4 }
-    d2:5 d2:5 d2:5 c2:5 c2:5 c2:5 c2:5 bes2:5 bes2:5 bes2:5 bes2:5 as2:5
-    d2:5 c2:5 bes2:5 as2:5 g8:5 as8:5 bes4:5 s2 bes2:5 as4:5 g4:5 d2:5
-    c2:5 bes2:5 as2:5 \repeat volta 2 {
-        g8:5 as8:5 bes4:5 s2 bes2:5 as4:5 g4:5 }
-    g8:5 as8:5 bes4:5 s2 \bar "|."
+    g2. s1 s1 s1 s1 \repeat volta 2 {
+        g4 s4 s4 s4 g4 s4 s4 s4 g4 g4 s4 s4 g4 s4 s4 s4 f4
+        s4 s4 s4 f4 s4 s4 s4 f4 f4 s4 s4 es4 f4 g4 s4 }
+    d2 d2 d2 c2 c2 c2 c2 bes2 bes2 bes2 bes2 as2
+    d2 c2 bes2 as2 g8 as8 bes4 s2 bes2 as4 g4 d2
+    c2 bes2 as2 \repeat volta 2 {
+        g8 as8 bes4 s2 bes2 as4 g4 }
+    g8 as8 bes4 s2 \bar "|."
     }
 
 Enta_Omry-Percussion =  \relative e' {
@@ -460,16 +502,26 @@ Enta_Omry-Percussion =  \relative e' {
     \repeat volta 2 {
         | % 14
         e4. ^ "Chiftitelli" e4. e4 | % 15
-        e4 r4 e4 r4 }
+        e4 r4 e4 r4 
+    }
     \repeat volta 2 {
         | % 16
-        R1*8 \bar "||"
-        R1*8 \bar "||"
-        R1*8 }
-    \repeat volta 2 {
-        | \barNumberCheck #40
-        \time 3/4  e4 e8 [ e8 ] e4 ^
-        "Roll/shake" }
+        R1*8 % \bar "||"
+        R1*8 % \bar "||"
+        R1*6
+        \alternative {
+            { 
+                | % 38
+                R1*2 
+            }
+            \repeat volta 2 {
+                | \barNumberCheck #40
+                \time 3/4
+                e4 e8 [ e8 ] e4 ^ "Roll/shake" 
+            }
+        }
+    }
+
     | % 41
     R2. ^\fermata
 

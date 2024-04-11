@@ -1,11 +1,18 @@
 To Do:
 ------
 
+April 11, 2024
+* Ana Dammi Falastini is actually 2/2?
+* Bil Afrah is actually 6/8?
+* Bil Afrah split into sub-scores at m. 26?
+* Enta Omry beaming m. 16+
+
+
 April 9, 2024
 * Convert and clean-up folk medley
 * Standardize formatting for 4x indications on repeats
 * ~~Document the new MarkLine context and other changes made there~~
-* Remove 5 superscripts from chord symbols
+* ~~Remove 5 superscripts from chord symbols~~
 
 April 7, 2024
 Score.ly
@@ -15,7 +22,7 @@ Score.ly
 * ~~Migrate percussion to DrumStaff~~
 
 Bass.ly
-* Fix '\mark's in various scores to allow for left-aligned phone formatting (using '\tag's at '\break's to keep things flexible
+* ~~Fix '\mark's in various scores to allow for left-aligned phone formatting (using '\tag's at '\break's to keep things flexible~~
 
 Ana Dammi Falastini
 * ~~Fix missing beaming in Melody mm. 1-2~~
@@ -39,8 +46,8 @@ Leve Palestina
 
 Zeina
 * ~~Switch some text instructions to TextMark not markup to print only at top of staff~~
-* ~~Fix Segno conflict with A box m. 9  ~~ 
-* ~~ use \repeat segno ~~
+* ~~Fix Segno conflict with A box m. 9 ~~ 
+* ~~use \repeat segno~~
 * Figure out second segno as in musescore pdfs
 
 April 5, 2024
@@ -55,14 +62,4 @@ Clean up and document ly files
 * Create a template describing how different parts are named and organized
 
 Create score and parts books
-<<<<<<< HEAD
-* Created: Score.ly, Bass.ly
-* Working: Accompaniment-F.ly
-* To-Do: Melody, Accompaniment, Percussion
-* Find dynamic way to make in all keys and clefs
-=======
-    * Created: Score.ly, Bass.ly
-    * Working: Accompaniment-F.ly
-    * To-Do: Melody, Accompaniment, Percussion
-    * Find dynamic way to make in all keys and clefs
->>>>>>> 0c7ea6a173b771ff0f8e483be01c9ed2d7da7375
+* Make in all keys and clefs
